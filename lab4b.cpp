@@ -1,5 +1,5 @@
 /*
-Домашняя работа №4b
+Лабораторная работа №4b
 Алексей Шапран 
 Группа: ИУ8-14
 */
@@ -8,6 +8,7 @@
 #include <cstring>
 #include <stdlib.h>
 #include <string.h>
+#include <string>
 #include <conio.h>
 using namespace std;
 
@@ -50,7 +51,8 @@ int main(void)
 	{
 		cout << " Customer " << i+1 << endl;
 		cout << " Full name: "; 
-		cin >> pC[i].fio;
+		_flushall(); 
+		cin.getline(pC[i].fio, 128);
 		_flushall(); 
 		cout << " Sex: ";
 		cin >> pC[i].sex;
@@ -60,17 +62,18 @@ int main(void)
 		_flushall(); 
 		cout << " Address";
 		cout << endl << " Street: ";
-		cin >> pC[i].address.street;
+		_flushall(); 
+		cin.getline(pC[i].address.street, 64);
 		fflush(stdin);
 		cout << " House: ";
 		cin >> pC[i].address.num_H;
 		cout << " Flat: ";
 		cin >> pC[i].address.num_F;
 		fflush(stdin);
-
 		cout << " Booking";
 		cout << endl << " Name of booking: ";
-		cin >> pC[i].booking.name;
+		_flushall(); 
+		cin.getline(pC[i].booking.name, 64);
 		fflush(stdin);
 		cout << " Serial number of booking: ";
 		cin >> pC[i].booking.num_B;
@@ -79,7 +82,7 @@ int main(void)
 
 	for (int i = 0; i<n; i++) 
 	{
-		cout << endl << "Customer " << i+1 << " "<< pC[i].fio << " "<< pC[i].sex << " "<< pC[i].age << " ";
+		cout << endl << "Customer " << i+1 << " "<< pC[i].fio << " " << pC[i].sex << " "<< pC[i].age << " ";
 		cout << pC[i].address.street << " "<< pC[i].address.num_H << " ";
 		cout << pC[i].address.num_F << " " << pC[i].booking.name << " ";
 		cout << pC[i].booking.num_B;
